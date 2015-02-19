@@ -1,15 +1,21 @@
 public class MainCharacter {
 
-	public static String charName = "LittleBitch"; // Name of Main Character
-	public int characterHealth;
+	private String characterName = "LittleBitch";
+	private int characterHealth;
 
-	public void characterHealth() {
-		characterHealth = 0;
+	public MainCharacter(int aCharacterHealth) {
+		
+		characterHealth = aCharacterHealth;
+
 	}
 
+	/**
+	 * Gets the amount of health the character has remaining
+	 * @return the amount of health the character has
+	 */
 	public int getHealth() {
-
-		System.out.println("Health =");
+		System.out.print(characterName);
+		System.out.println("'s Health =");
 		return characterHealth;
 	}
 
