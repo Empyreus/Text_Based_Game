@@ -6,5 +6,9 @@ public class Enemy {
 		enemyHealth = 100;
 
 	}
-
+	public int getHealth()
+	{
+		System.out.println(enemyName + enemyHealth);
+		return enemyHealth;
+	}
 }
