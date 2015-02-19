@@ -71,7 +71,7 @@ public class LocationDemo extends Applet {
 		l3.addExit(new Exit(Exit.WEST, l1));
 
 		l4.addExit(new Exit(Exit.NORTH, l1));
-		
+
 		// Set up room locations
 		currentLocation = l1;
 

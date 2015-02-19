@@ -4,16 +4,15 @@
 // 
 // Last modification date : October 07, 1997
 //
-public class Exit 
-{
+public class Exit {
 	// Numerical codes
 	public static final int UNDEFINED = 0;
 	public static final int NORTH = 1;
 	public static final int SOUTH = 2;
-	public static final int EAST  = 3;
-	public static final int WEST  = 4;
-	public static final int UP    = 5;
-	public static final int DOWN  = 6;
+	public static final int EAST = 3;
+	public static final int WEST = 4;
+	public static final int UP = 5;
+	public static final int DOWN = 6;
 	public static final int NORTHEAST = 7;
 	public static final int NORTHWEST = 8;
 	public static final int SOUTHEAST = 9;
@@ -21,40 +20,13 @@ public class Exit
 	public static final int IN = 11;
 	public static final int OUT = 12;
 
-	// String codes	
-	public static final String[] dirName = 
-	{ 
-		"UNDEFINED",
-		"NORTH",
-		"SOUTH",
-		"EAST",
-		"WEST",
-		"UP",
-		"DOWN",
-		"NORTHEAST",
-		"NORTHWEST",
-		"SOUTHEAST",
-		"SOUTHWEST",
-		"IN",
-		"OUT"
-	};
+	// String codes
+	public static final String[] dirName = { "UNDEFINED", "NORTH", "SOUTH",
+			"EAST", "WEST", "UP", "DOWN", "NORTHEAST", "NORTHWEST",
+			"SOUTHEAST", "SOUTHWEST", "IN", "OUT" };
 
-	public static final String[] shortDirName = 
-	{
-		"NULL",
-		"N",
-		"S",
-		"E",
-		"W",
-		"U",
-		"D",
-		"NE",
-		"NW",
-		"SE",
-		"SW",
-		"I",
-		"O"		
-	};
+	public static final String[] shortDirName = { "NULL", "N", "S", "E", "W",
+			"U", "D", "NE", "NW", "SE", "SW", "I", "O" };
 
 	// Member variables
 	private Location m_leadsTo = null;
@@ -67,8 +39,7 @@ public class Exit
 	private String m_shortDirectionName;
 
 	// Default constructor
-	public Exit()
-	{
+	public Exit() {
 		m_direction = Exit.UNDEFINED;
 		m_leadsTo = null;
 		m_directionName = dirName[UNDEFINED];
@@ -76,14 +47,13 @@ public class Exit
 	}
 
 	// Full constructor
-	public Exit( int direction, Location leadsTo )
-	{
+	public Exit(int direction, Location leadsTo) {
 		m_direction = direction;
 
 		// Assign direction names
-		if (direction <= dirName.length )
+		if (direction <= dirName.length)
 			m_directionName = dirName[m_direction];
-		if (direction <= shortDirName.length )
+		if (direction <= shortDirName.length)
 			m_shortDirectionName = shortDirName[m_direction];
 
 		// Assign location
@@ -91,44 +61,37 @@ public class Exit
 	}
 
 	// toString method
-	public String toString()
-	{
+	public String toString() {
 		return m_directionName;
 	}
 
 	// Assigns direction name
-	public void setDirectionName( String dirname )
-	{
+	public void setDirectionName(String dirname) {
 		m_directionName = dirname;
 	}
 
 	// Returns direction name
-	public String getDirectionName()
-	{
+	public String getDirectionName() {
 		return m_directionName;
 	}
 
 	// Assigns short direction name
-	public void setShortDirectionName ( String shortName )
-	{
+	public void setShortDirectionName(String shortName) {
 		m_shortDirectionName = shortName;
 	}
 
 	// Returns short direction name
-	public String getShortDirectionName ()
-	{
+	public String getShortDirectionName() {
 		return m_shortDirectionName;
 	}
 
 	// Assigns location
-	public void setLeadsTo ( Location leadsTo )
-	{
+	public void setLeadsTo(Location leadsTo) {
 		m_leadsTo = leadsTo;
 	}
 
 	// Returns location
-	public Location getLeadsTo (  )
-	{
+	public Location getLeadsTo() {
 		return m_leadsTo;
 	}
 
