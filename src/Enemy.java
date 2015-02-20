@@ -1,7 +1,7 @@
 public class Enemy {
 	private String enemyName = "Slade";
 	private int enemyHealth;
-
+//Test
 	public Enemy() {
 		enemyHealth = 100;
 
