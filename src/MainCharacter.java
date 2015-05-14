@@ -1,16 +1,16 @@
 public class MainCharacter extends Character {
 
-	private String characterName = "LittleBitch";
 	private int characterHealth;
 	private int characterStrength;
-
+	private String characterName;
 	/**
 	 * Constructs a character with 50 health and 25 strength
 	 */
-	public MainCharacter() {
+	public MainCharacter(String characterName, String charaterClass) {
 		super(characterName, charaterClass);
 		setCharacterHealth();
 		setCharacterStrength();
+		this.characterName = characterName;
 
 	}
 
@@ -32,10 +32,10 @@ public class MainCharacter extends Character {
 	 * 
 	 * @return the strength points of the character
 	 */
-	public int getCharacterStrength() {
+	public int getCharacterDamage() {
 		System.out.print(characterName);
-		System.out.println("'s Strength = " + characterStrength);
-		return characterStrength; // Cannot get this to return the character
+		System.out.println("'s Damage = " + getCharacterDamage());
+		return get; // Cannot get this to return the character
 									// strength after Systme.out.print
 									// statements
 	}
