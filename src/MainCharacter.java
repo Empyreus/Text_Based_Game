@@ -1,4 +1,4 @@
-public class MainCharacter {
+public class MainCharacter extends Character {
 
 	private String characterName = "LittleBitch";
 	private int characterHealth;
