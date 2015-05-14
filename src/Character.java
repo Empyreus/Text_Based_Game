@@ -3,30 +3,32 @@
  */
 public class Character {
     private String characterName;
-    private String charcterClass;
+    private String characterClass;
     private int characterDamage;
-    private int CHARACTER_HEALTH = 20;
+    private int characterHealth;
+    private int CHARACTER_MAX_HEALTH = 20;
 
-    public Character(String characterName, String characterClass, int damage) {
+    public Character(String characterName, String characterClass, int characterDamage) {
         this.characterName = characterName;
-        this.charcterClass = characterClass;
-        characterDamage = damage;
+        this.characterClass = characterClass;
+        this.characterDamage = characterDamage;
 
     }
 
     public String getCharacterName() {
+
         return characterName;
     }
 
-    public String getCharcterClass() {
-        return charcterClass;
+    public String getCharacterClass() {
+        return getCharacterName() + "'s Class = " + characterClass;
     }
 
-    public int getCharacterHealth() {
-        return CHARACTER_HEALTH;
+    public String getCharacterHealth() {
+        return getCharacterName() + "'s Health = " + characterHealth;
     }
 
-    public int getCharacterDamage() {
-        return characterDamage;
+    public String getCharacterDamage() {
+        return getCharacterName() + "'s Damage = " + characterDamage;
     }
 }
