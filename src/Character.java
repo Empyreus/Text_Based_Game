@@ -5,7 +5,7 @@ public class Character {
     private String characterName;
     private String charcterClass;
 
-    public Character(String characterNameharacterName, String characterClass) {
+    public Character(String characterName, String characterClass) {
         this.characterName = characterName;
         this.charcterClass = characterClass;
 

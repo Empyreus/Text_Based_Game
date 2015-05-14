@@ -8,7 +8,7 @@ public class MainCharacter extends Character {
 	 * Constructs a character with 50 health and 25 strength
 	 */
 	public MainCharacter() {
-
+		super(characterName, charaterClass);
 		setCharacterHealth();
 		setCharacterStrength();
 
