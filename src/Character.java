@@ -18,24 +18,7 @@ public class Character {
      */
     public Character(String characterName, String characterClass, int characterDamage) {
         this.characterName = characterName;
-        boolean correctSelection = false;
-        while (correctSelection = false)
-            if (characterClass.equalsIgnoreCase("Mage")) {
-                this.characterClass = characterClass;
-                correctSelection = true;
-            } else if (characterClass.equalsIgnoreCase("Paladine")) {
-                this.characterClass = characterClass;
-                correctSelection = true;
-
-
-            } else if (characterClass.equalsIgnoreCase("Warrior")) {
-                this.characterClass = characterClass;
-                correctSelection = true;
-
-            } else {
-                System.out.println("Must be Mage, Paladine, or Warrior");
-
-            }
+        this.characterClass = characterClass;
         this.characterDamage = characterDamage;
 
     }
