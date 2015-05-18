@@ -1,11 +1,12 @@
 /**
  * Created by RJ on 5/13/2015.
  */
+
 public class Character {
     private String characterName; //name of character
     private String characterClass; //class of character
     private int characterDamage; //damage of character
-    private int characterHealth; //health of character
+    private int characterHealth = 15; //health of character
     private int CHARACTER_MAX_HEALTH = 20; //max health of a character
 
     /**
@@ -17,7 +18,24 @@ public class Character {
      */
     public Character(String characterName, String characterClass, int characterDamage) {
         this.characterName = characterName;
-        this.characterClass = characterClass;
+        boolean correctSelection = false;
+        while (correctSelection = false)
+            if (characterClass.equalsIgnoreCase("Mage")) {
+                this.characterClass = characterClass;
+                correctSelection = true;
+            } else if (characterClass.equalsIgnoreCase("Paladine")) {
+                this.characterClass = characterClass;
+                correctSelection = true;
+
+
+            } else if (characterClass.equalsIgnoreCase("Warrior")) {
+                this.characterClass = characterClass;
+                correctSelection = true;
+
+            } else {
+                System.out.println("Must be Mage, Paladine, or Warrior");
+
+            }
         this.characterDamage = characterDamage;
 
     }
@@ -38,22 +56,24 @@ public class Character {
      * @return characterClass in a sentence
      */
     public String getCharacterClass() {
-        return getCharacterName() + "'s Class = " + characterClass;
+        return characterClass;
     }
 
     /**
      * Gets the health of the character
+     *
      * @return characterHealth in a sentence
      */
-    public String getCharacterHealth() {
-        return getCharacterName() + "'s Health = " + characterHealth;
+    public int getCharacterHealth() {
+        return characterHealth;
     }
 
     /**
      * Gets the damage of the character
+     *
      * @return characterDamage in a sentence
      */
-    public String getCharacterDamage() {
-        return getCharacterName() + "'s Damage = " + characterDamage;
+    public int getCharacterDamage() {
+        return characterDamage;
     }
 }
