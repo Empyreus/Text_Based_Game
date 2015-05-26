@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5f5d4b9a-ca5a-45e8-83e9-e3adcb92c491" name="Default" comment="Fixed Interitence, and  Reworked Character Class">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/TestClass.java" afterPath="$PROJECT_DIR$/src/TestClass.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Text_Based_Game.iws" />
@@ -513,7 +512,7 @@
       <workItem from="1432099969901" duration="129000" />
       <workItem from="1432189979373" duration="46000" />
       <workItem from="1432541907840" duration="259000" />
-      <workItem from="1432610645945" duration="3119000" />
+      <workItem from="1432610645945" duration="3153000" />
     </task>
     <task id="LOCAL-00001" summary="Updating to new java skills">
       <created>1431570366439</created>
@@ -563,11 +562,17 @@
       <option name="project" value="LOCAL" />
       <updated>1431937972968</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Fixed Interitence, and  Reworked Character Class">
+      <created>1432623825874</created>
+      <option name="number" value="00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1432623825874</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14198000" />
+    <option name="totallyTimeSpent" value="14232000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1050" extended-state="6" />
