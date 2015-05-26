@@ -7,16 +7,17 @@ public class TestClass {
 
         System.out.print("Character Name: ");
         String mainName = in.next();
+        String mainClass = "";
 
         System.out.print("Character Class: ");
-        String mainClass = "";
         String possibleClass = in.next();
         boolean correctSelection = false;
-        while (correctSelection = false) {
+        while (correctSelection == false) {
+
             if (possibleClass.equalsIgnoreCase("Mage")) {
                 possibleClass = mainClass;
                 correctSelection = true;
-            } else if (possibleClass.equalsIgnoreCase("Paladin")) {
+            } else if (possibleClass.equalsIgnoreCase("Rogue")) {
                 possibleClass = mainClass;
                 correctSelection = true;
 
@@ -25,7 +26,8 @@ public class TestClass {
                 correctSelection = true;
 
             } else {
-                System.out.println("Please choose Mage, Paladin, or Warrior");
+                System.out.println("Please choose Mage, Rogue, or Warrior");
+                possibleClass = in.next();
             }
         }
         System.out.print("Character Damage: ");
@@ -35,6 +37,5 @@ public class TestClass {
         System.out.println(tommy.getCharacterHealth());
         System.out.println(tommy.getCharacterDamage());
         tommy.getCharacterClass();
-        System.out.println("HI");
     }
 }
