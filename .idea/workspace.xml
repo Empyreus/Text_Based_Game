@@ -512,7 +512,7 @@
       <workItem from="1432099969901" duration="129000" />
       <workItem from="1432189979373" duration="46000" />
       <workItem from="1432541907840" duration="259000" />
-      <workItem from="1432610645945" duration="3153000" />
+      <workItem from="1432610645945" duration="3171000" />
     </task>
     <task id="LOCAL-00001" summary="Updating to new java skills">
       <created>1431570366439</created>
@@ -568,11 +568,17 @@
       <option name="project" value="LOCAL" />
       <updated>1432623825874</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Fixed Interitence, and  Reworked Character Class">
+      <created>1432623856908</created>
+      <option name="number" value="00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1432623856908</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14232000" />
+    <option name="totallyTimeSpent" value="14250000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1050" extended-state="6" />
