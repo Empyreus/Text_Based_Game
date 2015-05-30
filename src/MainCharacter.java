@@ -1,3 +1,7 @@
+/**
+ * Created by rjsouza on 5/29/15.
+ * MainCharacter of the stories Class, subclass of Character
+ */
 public class MainCharacter extends Character {
 
     private int characterHealth;

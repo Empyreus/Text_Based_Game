@@ -1,5 +1,6 @@
 /**
  * Created by RJ on 5/13/2015.
+ * Main class for creating a Character.
  */
 
 public class Character {
@@ -44,6 +45,11 @@ public class Character {
         return characterName;
     }
 
+    /**
+     * Sets the class of the character
+     * @param charClass is the name of the class
+     * @return the characters class
+     */
     public String setClass(String charClass) {
         characterClass = charClass;
         return characterClass;
