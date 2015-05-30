@@ -23,22 +23,39 @@ public class Character {
 
     }
 
+
+    /**
+     * Sets character health to 50 Not sure if this is needed
+     *
+     * @return the health of the character
+     */
+    public int setHealth(int health) {
+        characterHealth = health;
+        return characterHealth;
+    }
+
     /**
      * Gets the name of the character
      *
      * @return characterName
      */
-    public String getCharacterName() {
+    public String getName() {
 
         return characterName;
     }
+
+    public String setClass(String charClass) {
+        characterClass = charClass;
+        return characterClass;
+    }
+
 
     /**
      * Gets the class of the character
      *
      * @return characterClass in a sentence
      */
-    public String getCharacterClass() {
+    public String getCharClass() {
         return characterClass;
     }
 
@@ -47,8 +64,18 @@ public class Character {
      *
      * @return characterHealth in a sentence
      */
-    public int getCharacterHealth() {
+    public int getHealth() {
         return characterHealth;
+    }
+
+    /**
+     * Sets character strength to 25 Not sure if this is needed
+     *
+     * @return the strength of the character
+     */
+    public int setDamage(int damage) {
+        characterDamage = damage;
+        return characterDamage;
     }
 
     /**
@@ -56,7 +83,7 @@ public class Character {
      *
      * @return characterDamage in a sentence
      */
-    public int getCharacterDamage() {
+    public int getDamage() {
         return characterDamage;
     }
 }
