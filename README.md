@@ -1,3 +1,3 @@
 # Story Board
-Game about "Real Cannible Shia Lebouf"
-
+Text based adventure game. 
+Main enemy is Slade.
