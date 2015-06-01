@@ -26,7 +26,6 @@ public class TestClass {
         String mainClass = "";
 
         System.out.print("Please choose Mage, Rogue, or Warrior for an Class: ");
-        //System.out.print("Character Class: ");
         String possibleClass = in.next();
         boolean correctSelection = false;
         while (correctSelection == false) {
@@ -67,12 +66,12 @@ public class TestClass {
         System.out.println("Skeleton Damage = " + skeleton1.getDamage());
         System.out.println("Type 1 to Attack or 2 to Run. Type Exit to exit game");
         String choice1 = in.next();
-        while (skeleton1.Alive() == true) {
+        while (skeleton1.Alive()) {
             if (choice1.equalsIgnoreCase("exit")) {
                 running = false;
             } else if (choice1.equalsIgnoreCase("1") || choice1.equalsIgnoreCase("2")) {
 
-                while (skeleton1.Alive() == true && choice1.equalsIgnoreCase("1")) {
+                while (skeleton1.Alive() && choice1.equalsIgnoreCase("1")) {
 
                     Thread.sleep(a);
                     System.out.println("You walk forward to attack skeleton. You punch the skeleton.");
@@ -88,7 +87,7 @@ public class TestClass {
                     Thread.sleep(b);
                     System.out.println("Your health remaining = " + mainCharacter.getName() + mainCharacter.setHealth(mainCharacter.getHealth() - skeleton1.getDamage()));
                     Thread.sleep(b);
-                    if (skeleton1.Alive() == true) {
+                    if (skeleton1.Alive()) {
                         System.out.println("To attack again press 1 to run press 2");
                         choice1 = in.next();
                     } else {
