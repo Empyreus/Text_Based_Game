@@ -35,6 +35,11 @@ public class Character {
         return characterHealth;
     }
 
+    public String setName(String x) {
+        characterName = x;
+        return x;
+    }
+
     /**
      * Gets the name of the character
      *
@@ -92,5 +97,15 @@ public class Character {
      */
     public int getDamage() {
         return characterDamage;
+    }
+
+    public boolean Alive() {
+        if (getHealth() <= 0) {
+            setHealth(0);
+            return false;
+        } else {
+            return true;
+        }
+
     }
 }
