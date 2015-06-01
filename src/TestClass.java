@@ -28,7 +28,7 @@ public class TestClass {
         System.out.print("Please choose Mage, Rogue, or Warrior for an Class: ");
         String possibleClass = in.next();
         boolean correctSelection = false;
-        while (correctSelection == false) {
+        while (!correctSelection) {
 
 
             if (possibleClass.equalsIgnoreCase("Mage")) {
@@ -95,7 +95,7 @@ public class TestClass {
                     }
 
                 }
-                while (skeleton1.Alive() == true && choice1.equalsIgnoreCase("2")) {
+                while (skeleton1.Alive() && choice1.equalsIgnoreCase("2")) {
 
                     Thread.sleep(1000);
                     System.out.println("The Skeleton walks forward to attack you. Skeleton punches you.");
@@ -104,7 +104,7 @@ public class TestClass {
                     Thread.sleep(b);
                     System.out.println("Your health remaining = " + mainCharacter.getName() + mainCharacter.setHealth(mainCharacter.getHealth() - skeleton1.getDamage()));
                     Thread.sleep(b);
-                    if (skeleton1.Alive() == true) {
+                    if (skeleton1.Alive()) {
                         System.out.println("To attack again press 1 to run press 2");
                         choice1 = in.next();
                     } else {
@@ -116,7 +116,7 @@ public class TestClass {
                 choice1 = in.next();
             }
         }
-        if (skeleton1.Alive() == false) {
+        if (!skeleton1.Alive()) {
             Inventory healthPot = new Inventory("Health Potion", "Restores 5 Health", 5);
             inventory.add(healthPot);
             inventory.add(healthPot);
