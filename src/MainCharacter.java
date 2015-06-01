@@ -24,11 +24,13 @@ public class MainCharacter extends Character {
         setHealth(MAX_MAGE_HEALTH);
         return getHealth();
     }
-    public int setMaxRogueHealth(){
+
+    public int setMaxRogueHealth() {
         setHealth(MAX_ROGUE_HEALTH);
         return getHealth();
     }
-    public int setMaxWarriorHealth(){
+
+    public int setMaxWarriorHealth() {
         setHealth(MAX_WARRIOR_HEALTH);
         return getHealth();
     }
