@@ -18,7 +18,8 @@ public class Enemy {
     }
 
     /**
-     *Sets the enemy's health
+     * Sets the enemy's health
+     *
      * @return enemy's health
      */
     public int setHealth(int x) {
@@ -28,6 +29,7 @@ public class Enemy {
 
     /**
      * Causes the enemy to take damage and loose health, cannot go below 0
+     *
      * @param x the amount of damage to take
      * @return remaining health
      */
@@ -42,6 +44,7 @@ public class Enemy {
 
     /**
      * Gets the health of the enemy
+     *
      * @return health of the enemy
      */
     public int getHealth() {
@@ -50,6 +53,7 @@ public class Enemy {
 
     /**
      * Sets how much damage the enemy does
+     *
      * @param x the amount of damage
      * @return how much damage the enemy does
      */
@@ -60,6 +64,7 @@ public class Enemy {
 
     /**
      * Gets the amount of damage done by the enemy
+     *
      * @return enemy's damage
      */
     public int getDamage() {
@@ -68,6 +73,7 @@ public class Enemy {
 
     /**
      * Sets the name of the enemy
+     *
      * @param x is the new name
      * @return the name of the enemy
      */
@@ -78,6 +84,7 @@ public class Enemy {
 
     /**
      * Gets the name of the enemy
+     *
      * @return the name of the enemy
      */
     public String getName() {
@@ -86,6 +93,7 @@ public class Enemy {
 
     /**
      * Checks if the enemy is alive or dead, sets enemy health to 0 if dead
+     *
      * @return true if enemy is alive, false if enemy is dead
      */
     public boolean Alive() {

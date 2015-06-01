@@ -47,6 +47,7 @@ public class Character {
 
     /**
      * Sets the class of the character
+     *
      * @param charClass is the name of the class
      * @return the characters class
      */
