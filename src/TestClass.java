@@ -1,20 +1,21 @@
 /**
  * Runs the program with the story
  */
-import java.util.Scanner;
 
+import java.util.ArrayList;
+import java.util.Scanner;
 
 public class TestClass {
 
     public static void main(String[] args) throws InterruptedException {
         boolean running = true;
-
+        ArrayList<Inventory> inventory = new ArrayList<>();
         Scanner in = new Scanner(System.in);
         short z = 1500;
         short x = 10000;
         MainCharacter mainCharacter = new MainCharacter("", "", 0);
         Thread.sleep(z);
-        System.out.println("This game can only be exited at predetermained places. If exit option is available, it will be said. Now lets begin.");
+        System.out.println("This game can only be exited at predetermined places. If exit option is available, it will be said. Now lets begin.");
         Thread.sleep(2000);
         System.out.print("Character Name: ");
         String mainName = in.next();
@@ -105,7 +106,34 @@ public class TestClass {
                 System.out.println("Skeleton Killed!");
             }
         }
+        if (skeleton1.Alive() == false) {
+            Inventory healthPot = new Inventory("Health Potion", "Restores 5 Health", 5);
+            inventory.add(healthPot);
+            inventory.add(healthPot);
+            inventory.add(healthPot);
+            inventory.add(healthPot);
+            inventory.add(healthPot);
+            Inventory basicWep = new Inventory("", "", 0);
+            if (mainCharacter.getCharClass().equalsIgnoreCase("Mage")) {
+                basicWep.setName("Basic Staff");
+                basicWep.setDescription("Simple Mage Weapon");
+                basicWep.setNumb(8);
 
+            }
+            else if (mainCharacter.getCharClass().equalsIgnoreCase("Rogue")) {
+                basicWep.setName("Basic Dagger");
+                basicWep.setDescription("Simple Rogue Weapon");
+                basicWep.setNumb(6);
+            }
+            else if (mainCharacter.getCharClass().equalsIgnoreCase("Warrior")) {
+                basicWep.setName("Basic Sword");
+                basicWep.setDescription("Simple Warrior Weapon");
+                basicWep.setNumb(4);
+            }
+            inventory.add(basicWep);
+            System.out.println("Skeleton drops 5 health potions and a " + basicWep.getName());
+
+        }
 
     }
 }
