@@ -34,20 +34,19 @@ public class TestClass {
             if (possibleClass.equalsIgnoreCase("Mage")) {
                 mainCharacter.setClass("Mage");
                 mainCharacter.setDamage(6);
-                mainCharacter.setHealth(15);
-
+                mainCharacter.setMaxMageHealth();
                 correctSelection = true;
 
             } else if (possibleClass.equalsIgnoreCase("Rogue")) {
                 mainCharacter.setClass("Rogue");
                 mainCharacter.setDamage(4);
-                mainCharacter.setHealth(20);
+                mainCharacter.setMaxRogueHealth();
                 correctSelection = true;
 
             } else if (possibleClass.equalsIgnoreCase("Warrior")) {
                 mainCharacter.setClass("Warrior");
                 mainCharacter.setDamage(2);
-                mainCharacter.setHealth(25);
+                mainCharacter.setMaxWarriorHealth();
                 correctSelection = true;
 
             } else {
@@ -68,7 +67,7 @@ public class TestClass {
         String choice1 = in.next();
         while (skeleton1.Alive()) {
             if (choice1.equalsIgnoreCase("exit")) {
-                running = false;
+                //running = false;
             } else if (choice1.equalsIgnoreCase("1") || choice1.equalsIgnoreCase("2")) {
 
                 while (skeleton1.Alive() && choice1.equalsIgnoreCase("1")) {
@@ -80,7 +79,6 @@ public class TestClass {
                     Thread.sleep(b);
                     System.out.println("Skeletons health remaining = " + skeleton1.takeDamage(mainCharacter.getDamage()));
                     Thread.sleep(b);
-                    Thread.sleep(1000);
                     System.out.println("The Skeleton walks forward to attack you. Skeleton punches you.");
                     Thread.sleep(b);
                     System.out.println("Skeleton deals 1 damage");
