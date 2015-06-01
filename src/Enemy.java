@@ -6,6 +6,7 @@ public class Enemy {
     private String enemyName = "";
     private int enemyHealth;
     private int enemyDamage;
+    private String enemyDescription;
 
     /**
      * Constructs an enemy with a base of 0 health, 0 damage, and no name
@@ -106,5 +107,12 @@ public class Enemy {
 
     }
 
+    public String setEnemyDescription(String x){
+        enemyDescription = x;
+        return enemyDescription;
+    }
+    public String getEnemyDescription(){
+        return enemyDescription;
+    }
 }
 

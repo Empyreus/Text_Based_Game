@@ -66,7 +66,7 @@ public class TestClass {
             System.out.println("Character Damage = " + mainCharacter.getDamage());
 
             Room startRoom = new Room("You open your eyes to find a room. In this room you see a Skeleton before the only door.");
-            Room secondRoom = new Room("You walk through the door the skeleton was prevously gaurding. You see two doors, one with a skeleton (stronger than before) the other with no gaurdian.");
+            Room secondRoom = new Room("You walk through the door the skeleton was prevously gaurding. You see two doors, one with a skeleton (stronger than before) the other with no enemy.");
 
             Room currentRoom = startRoom;
             while (currentRoom == startRoom) {
@@ -159,7 +159,21 @@ public class TestClass {
 
             }
             while (currentRoom == secondRoom) {
-
+                System.out.println(currentRoom.getRoomDescription());
+                System.out.println("To fight skeleton press 1 to go to enemyless door.");
+                String choice = in.next();
+                StrongSkeleton enemy1 = new StrongSkeleton();
+                if (choice.equalsIgnoreCase("1")){
+                    System.out.println("You walk forward to the skeleton. Press 1 to attack, 2 to retreat.");
+                    System.out.println(enemy1.getEnemyDescription());
+                    System.out.println("StrongSkeleton's health = " + enemy1.getHealth());
+                    System.out.println("StrongSkeleton's damage = " + enemy1.getDamage());
+                    String choice1 = in.next();
+                        if(choice1.equalsIgnoreCase("1")){
+                            
+                        }
+                }
+                currentRoom = null;
             }
         }
     }
