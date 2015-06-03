@@ -25,7 +25,7 @@ public class TestClass {
             Thread.sleep(b);
             System.out.print("Character Name: ");
             mainCharacter.setName(in.next());
-            System.out.print("Please choose Mage, Rogue, or Warrior for an Class: ");
+            System.out.print("Please choose Mage, Rogue, or Warrior for a Class: ");
             String possibleClass = in.next();
             boolean correctSelection = false;
             int maxHealth = 0;
@@ -91,12 +91,14 @@ public class TestClass {
                             Thread.sleep(b);
                             System.out.println("Skeletons health remaining = " + skeleton1.takeDamage(mainCharacter.getDamage()));
                             Thread.sleep(b);
-                            System.out.println("The Skeleton walks forward to attack you. Skeleton punches you.");
-                            Thread.sleep(b);
-                            System.out.println("Skeleton deals 1 damage");
-                            Thread.sleep(b);
-                            System.out.println("Your health remaining = "+ mainCharacter.setHealth(mainCharacter.getHealth() - skeleton1.getDamage()));
-                            Thread.sleep(b);
+                            if (skeleton1.Alive()) {
+                                System.out.println("The Skeleton walks forward to attack you. Skeleton punches you.");
+                                Thread.sleep(b);
+                                System.out.println("Skeleton deals 1 damage");
+                                Thread.sleep(b);
+                                System.out.println("Your health remaining = " + mainCharacter.setHealth(mainCharacter.getHealth() - skeleton1.getDamage()));
+                                Thread.sleep(b);
+                            }
                             if (skeleton1.Alive()) {
                                 System.out.println("To attack again press 1 to run press 2");
                                 choice1 = in.next();
@@ -193,37 +195,40 @@ public class TestClass {
                                 } else {
                                     System.out.println("Skeleton Killed!");
                                 }
-                            }
-                            else if (choice2.equalsIgnoreCase("2")){
+                            } else if (choice2.equalsIgnoreCase("2")) {
                                 if (healthPots.size() >= 0) {
                                     mainCharacter.setHealth(mainCharacter.getHealth() + healthPots.get(0).getNumb());
                                     healthPots.remove(0);
                                     System.out.println("Heal is now = " + mainCharacter.getHealth());
                                     System.out.println("To attack again press 1 to use a health potion press 2 / Enter 3 to check health potions remaining.");
-                                    choice2 = in.next();                                }
-                                else {
-                                    System.out.println("No more health potins remaining.");
+                                    choice2 = in.next();
+                                } else {
+                                    System.out.println("No more health potions remaining.");
                                     System.out.println("To attack again press 1 to use a health potion press 2 / Enter 3 to check health potions remaining.");
                                     choice2 = in.next();
                                 }
-                            }
-                            else if (choice2.equalsIgnoreCase("3")){
+                            } else if (choice2.equalsIgnoreCase("3")) {
                                 System.out.println("There are " + healthPots.size() + " remaining.");
                                 System.out.println("To attack again press 1 to use a health potion press 2 / Enter 3 to check health potions remaining.");
                                 choice2 = in.next();
-                            }
-                            else{
+                            } else {
                                 System.out.println("Please choose a valid option.");
+                                System.out.println("To fight skeleton press 1 or 2 to go to enemyless door.");
                                 choice2 = in.next();
                             }
                         }
 
                     }
+                } else if (choice.equalsIgnoreCase("2")) {
+                    System.out.println("You walk over to the dooor, when you attempt to open the door it does budge and is locked. There is no sign of a key nearby.");
+
+                    choice = in.next();
                 }
-                currentRoom = null;
             }
+            currentRoom = null;
         }
     }
 }
+
 
 
