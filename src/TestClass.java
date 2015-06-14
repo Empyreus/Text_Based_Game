@@ -10,16 +10,40 @@ public class TestClass {
     public static void main(String[] args) throws InterruptedException {
         boolean running = true;
         while (running) {
-            ArrayList<Inventory> weapons = new ArrayList<>();
-            ArrayList<Inventory> healthPots = new ArrayList<>();
+
             Scanner in = new Scanner(System.in);
 
+            //Array Lists
+            ArrayList<Inventory> weapons = new ArrayList<>();
+            ArrayList<Inventory> healthPots = new ArrayList<>();
+            ArrayList<Inventory> items = new ArrayList<>();
+
+            //Inventory Items
+            Inventory basicKey = new Inventory("Basic Key", "Basic key that unlocks certain doors.", 1);
+            Inventory healthPot = new Inventory("Health Potion", "Restores 5 Health", 5);
+            Inventory basicWep = new Inventory("", "", 0);
+            Inventory advancedWep = new Inventory("", "", 0);
+
+
+            //Rooms
+            Room startRoom = new Room("You open your eyes to find a room. In this room you see a Skeleton before the only door.");
+            Room secondRoom = new Room("You walk through the door the skeleton was prevously gaurding. You see two doors, one with a skeleton (stronger than before) the other with no enemy.");
+            Room thirdRoom = new Room("");
+            Room currentRoom = startRoom;
+
+            //Wait Times
             short a = 0;
             short b = 0;
             short c = 0;
             short d = 0;
             short x = 0;
+
+            //Characters
             MainCharacter mainCharacter = new MainCharacter("", "", 0);
+            Skeleton skeleton1 = new Skeleton();
+            StrongSkeleton enemy1 = new StrongSkeleton();
+
+
             Thread.sleep(b);
             System.out.println("This game can only be exited at predetermined places. If exit option is available, it will be said. Now lets begin.");
             Thread.sleep(b);
@@ -64,13 +88,8 @@ public class TestClass {
             System.out.println("Character Health = " + mainCharacter.getHealth());
             System.out.println("Character Damage = " + mainCharacter.getDamage());
 
-            Room startRoom = new Room("You open your eyes to find a room. In this room you see a Skeleton before the only door.");
-            Room secondRoom = new Room("You walk through the door the skeleton was prevously gaurding. You see two doors, one with a skeleton (stronger than before) the other with no enemy.");
-
-            Room currentRoom = startRoom;
             while (currentRoom == startRoom) {
                 System.out.println(startRoom.getRoomDescription());
-                Skeleton skeleton1 = new Skeleton();
 
                 System.out.println("Skeleton Health = " + skeleton1.getHealth());
                 System.out.println("Skeleton Damage = " + skeleton1.getDamage());
@@ -129,13 +148,11 @@ public class TestClass {
                     }
                 }
                 if (!skeleton1.Alive()) {
-                    Inventory healthPot = new Inventory("Health Potion", "Restores 5 Health", 5);
                     healthPots.add(healthPot);
                     healthPots.add(healthPot);
                     healthPots.add(healthPot);
                     healthPots.add(healthPot);
                     healthPots.add(healthPot);
-                    Inventory basicWep = new Inventory("", "", 0);
                     if (mainCharacter.getCharClass().equalsIgnoreCase("Mage")) {
                         basicWep.setName("Basic Staff");
                         basicWep.setDescription("Simple Mage Weapon");
@@ -162,9 +179,8 @@ public class TestClass {
             }
             while (currentRoom == secondRoom) {
                 System.out.println(currentRoom.getRoomDescription());
-                System.out.println("To fight skeleton press 1 or 2 to go to enemyless door.");
+                System.out.println("To fight skeleton press 1 or 2 to go to door with no enemy.");
                 String choice = in.next();
-                StrongSkeleton enemy1 = new StrongSkeleton();
                 if (choice.equalsIgnoreCase("1")) {
                     System.out.print("You walk forward to the skeleton. Description: ");
                     System.out.println(enemy1.getEnemyDescription());
@@ -185,7 +201,7 @@ public class TestClass {
                                 Thread.sleep(b);
                                 System.out.println("The Skeleton walks forward to attack you. Skeleton attacks you.");
                                 Thread.sleep(b);
-                                System.out.println("Skeleton deals 1 damage");
+                                System.out.println("Skeleton deals " + enemy1.getDamage() + " damage");
                                 Thread.sleep(b);
                                 System.out.println("Your health remaining = " + mainCharacter.setHealth(mainCharacter.getHealth() - enemy1.getDamage()));
                                 Thread.sleep(b);
@@ -221,8 +237,37 @@ public class TestClass {
                     }
                 } else if (choice.equalsIgnoreCase("2")) {
                     System.out.println("You walk over to the dooor, when you attempt to open the door it does budge and is locked. There is no sign of a key nearby.");
-
+                    System.out.println("To fight skeleton press 1 or 2 to go to door with no enemy.");
                     choice = in.next();
+                }
+                if (!enemy1.Alive()) {
+                    if (mainCharacter.getCharClass().equalsIgnoreCase("Mage")) {
+                        advancedWep.setName("Advanced Staff");
+                        advancedWep.setDescription("Magically Imbued Mage Weapon, increases strength of Magic");
+                        advancedWep.setNumb(10);
+
+                    } else if (mainCharacter.getCharClass().equalsIgnoreCase("Rogue")) {
+                        advancedWep.setName("Advnaced Dagger");
+                        advancedWep.setDescription("Extremely Light Rogue Weapon, allows for more precise attacks");
+                        advancedWep.setNumb(8);
+                    } else if (mainCharacter.getCharClass().equalsIgnoreCase("Warrior")) {
+                        advancedWep.setName("Advanced Sword");
+                        advancedWep.setDescription("Supremely Fordged Warriar Weapon, better balancing allows for stronger attacks");
+                        advancedWep.setNumb(6);
+                    }
+                    weapons.add(advancedWep);
+                    items.add(basicKey);
+                    System.out.println("StrongSkeleton drops an " + advancedWep.getName() + " and a basic key");
+                    System.out.println(advancedWep.getName() + "Description: " + advancedWep.getDescription());
+                    System.out.println(advancedWep.getName() + "Damage: " + advancedWep.getDescription());
+                    System.out.println("Press 1 to equipe " + advancedWep.getName() + "or press 2 to equipe" + basicWep.getName());
+                    String choice1 = in.next();
+                    if (choice1.equalsIgnoreCase("1")) {
+                        mainCharacter.setDamage(advancedWep.getNumb());
+                    } else if (choice1.equalsIgnoreCase("2")) {
+                        mainCharacter.setDamage(basicWep.getNumb());
+                    }
+                    System.out.println("New Damamge: " + mainCharacter.getDamage());
                 }
             }
             currentRoom = null;
