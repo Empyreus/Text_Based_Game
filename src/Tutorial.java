@@ -10,13 +10,13 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 
-public class TestClass extends JFrame {
+public class Tutorial extends JFrame {
     JPanel jp = new JPanel();
     JLabel jl = new JLabel();
     JTextField jt = new JTextField(30);
     JTextArea ja = new JTextArea("Hello", 5, 40);
 
-    public TestClass() throws InterruptedException {
+    public Tutorial() {
         setTitle("Tutorial");
         setVisible(true);
         setSize(500, 200);
@@ -69,9 +69,7 @@ public class TestClass extends JFrame {
         StrongSkeleton enemy1 = new StrongSkeleton();
 
 
-        Thread.sleep(b);
         ja.append("This game can only be exited at predetermined places. If exit option is available, it will be said. Now lets begin.");
-        Thread.sleep(b);
         System.out.print("Character Name: ");
         mainCharacter.setName(in.next());
         System.out.print("Please choose Mage, Rogue, or Warrior for a Class: ");
@@ -127,20 +125,13 @@ public class TestClass extends JFrame {
 
                     while (skeleton1.Alive() && choice1.equalsIgnoreCase("1")) {
 
-                        Thread.sleep(a);
                         System.out.println("You walk forward to attack skeleton. You punch the skeleton.");
-                        Thread.sleep(b);
                         System.out.println("You deal " + mainCharacter.getDamage() + " Damage");
-                        Thread.sleep(b);
                         System.out.println("Skeletons health remaining = " + skeleton1.takeDamage(mainCharacter.getDamage()));
-                        Thread.sleep(b);
                         if (skeleton1.Alive()) {
                             System.out.println("The Skeleton walks forward to attack you. Skeleton punches you.");
-                            Thread.sleep(b);
                             System.out.println("Skeleton deals 1 damage");
-                            Thread.sleep(b);
                             System.out.println("Your health remaining = " + mainCharacter.setHealth(mainCharacter.getHealth() - skeleton1.getDamage()));
-                            Thread.sleep(b);
                         }
                         if (skeleton1.Alive()) {
                             System.out.println("To attack again press 1 to run press 2");
@@ -152,13 +143,9 @@ public class TestClass extends JFrame {
                     }
                     while (skeleton1.Alive() && choice1.equalsIgnoreCase("2")) {
 
-                        Thread.sleep(a);
                         System.out.println("The Skeleton walks forward to attack you. Skeleton punches you.");
-                        Thread.sleep(b);
                         System.out.println("Skeleton deals 1 damage");
-                        Thread.sleep(b);
                         System.out.println("Your health remaining = " + mainCharacter.setHealth(mainCharacter.getHealth() - skeleton1.getDamage()));
-                        Thread.sleep(b);
                         if (skeleton1.Alive()) {
                             System.out.println("To attack again press 1 to run press 2");
                             choice1 = in.next();
@@ -216,19 +203,12 @@ public class TestClass extends JFrame {
                 if (choice1.equalsIgnoreCase("1")) {
                     while (enemy1.Alive()) {
                         if (choice2.equalsIgnoreCase("1")) {
-                            Thread.sleep(a);
                             System.out.println("You walk forward to attack skeleton. You attack the skeleton.");
-                            Thread.sleep(b);
                             System.out.println("You deal " + mainCharacter.getDamage() + " Damage");
-                            Thread.sleep(b);
                             System.out.println("Skeletons health remaining = " + enemy1.takeDamage(mainCharacter.getDamage()));
-                            Thread.sleep(b);
                             System.out.println("The Skeleton walks forward to attack you. Skeleton attacks you.");
-                            Thread.sleep(b);
                             System.out.println("Skeleton deals " + enemy1.getDamage() + " damage");
-                            Thread.sleep(b);
                             System.out.println("Your health remaining = " + mainCharacter.setHealth(mainCharacter.getHealth() - enemy1.getDamage()));
-                            Thread.sleep(b);
                             if (enemy1.Alive()) {
                                 System.out.println("To attack again press 1 to use a health potion press 2 / Enter 3 to check health potions remaining.");
                                 choice2 = in.next();
@@ -294,10 +274,11 @@ public class TestClass extends JFrame {
                 System.out.println("New Damamge: " + mainCharacter.getDamage());
             }
         }
+        currentRoom = null;
     }
 
     public static void main(String[] args) {
-        TestClass t = new TestClass();
+        Tutorial t = new Tutorial();
     }
 }
 
