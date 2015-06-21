@@ -28,7 +28,8 @@ public class TestClass {
             //Rooms
             Room startRoom = new Room("You open your eyes to find a room. In this room you see a Skeleton before the only door.");
             Room secondRoom = new Room("You walk through the door the skeleton was prevously gaurding. You see two doors, one with a skeleton (stronger than before) the other with no enemy.");
-            Room thirdRoom = new Room("");
+            Room thirdRoom = new Room("You walk into a room, contains one Behemoth");
+            Room fourthRoom = new Room("You walk into a room containing one large chest.");
             Room currentRoom = startRoom;
 
             //Wait Times
@@ -224,7 +225,7 @@ public class TestClass {
                                     choice2 = in.next();
                                 }
                             } else if (choice2.equalsIgnoreCase("3")) {
-                                System.out.println("There are " + healthPots.size() + " remaining.");
+                                System.out.println("There are " + healthPots.size() + " heal potions remaining.");
                                 System.out.println("To attack again press 1 to use a health potion press 2 / Enter 3 to check health potions remaining.");
                                 choice2 = in.next();
                             } else {
@@ -258,8 +259,8 @@ public class TestClass {
                     weapons.add(advancedWep);
                     items.add(basicKey);
                     System.out.println("StrongSkeleton drops an " + advancedWep.getName() + " and a basic key");
-                    System.out.println(advancedWep.getName() + "Description: " + advancedWep.getDescription());
-                    System.out.println(advancedWep.getName() + "Damage: " + advancedWep.getDescription());
+                    System.out.println(advancedWep.getName() + " Description: " + advancedWep.getDescription());
+                    System.out.println(advancedWep.getName() + " Damage: " + advancedWep.getNumb());
                     System.out.println("Press 1 to equipe " + advancedWep.getName() + "or press 2 to equipe" + basicWep.getName());
                     String choice1 = in.next();
                     if (choice1.equalsIgnoreCase("1")) {
@@ -268,9 +269,35 @@ public class TestClass {
                         mainCharacter.setDamage(basicWep.getNumb());
                     }
                     System.out.println("New Damamge: " + mainCharacter.getDamage());
+                    System.out.println("To enter door behind dead press 1, to go to door with no enemy press 2.");
+                    String choice2 = in.next();
+                    if(choice2 == "1"){
+                        currentRoom = thirdRoom;
+                    }
+                    else if (choice2 == "2"){
+                        System.out.println("You walk to the door with no enemy.");
+                        System.out.println("To use the drooped key press 1, to enter the door behind the dead skeleton press 2.");
+                        String choice3 = in.next();
+                        if (choice3 == "1" && items.contains(basicKey)){
+                            System.out.println("You unlock the dorry with the key, you enter the room.");
+                            currentRoom = fourthRoom;
+                        }
+                        else if (choice3 == "1" && !items.contains(basicKey)){
+                            System.out.println("You do not have the key to enter this door");
+                            System.out.println("Enter 1 to go through door behind dead skeleton");
+                            choice3 = in.next();
+                            currentRoom = thirdRoom;
+                        }
+
+                    }
                 }
             }
-            currentRoom = null;
+            if (currentRoom == thirdRoom) {
+                System.out.println(thirdRoom.getRoomDescription());
+            }
+            if (currentRoom == fourthRoom){
+                System.out.println(fourthRoom.getRoomDescription());
+            }
         }
     }
 }
