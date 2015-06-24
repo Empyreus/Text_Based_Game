@@ -268,7 +268,7 @@ public class TestClass {
                     } else if (choice1.equalsIgnoreCase("2")) {
                         mainCharacter.setDamage(basicWep.getNumb());
                     }
-                    System.out.println("New Damamge: " + mainCharacter.getDamage());
+                    System.out.println("New Damage: " + mainCharacter.getDamage());
                     System.out.println("To enter door behind dead press 1, to go to door with no enemy press 2.");
                     String choice2 = in.next();
                     if(choice2 == "1"){
@@ -276,7 +276,7 @@ public class TestClass {
                     }
                     else if (choice2 == "2"){
                         System.out.println("You walk to the door with no enemy.");
-                        System.out.println("To use the drooped key press 1, to enter the door behind the dead skeleton press 2.");
+                        System.out.println("To use the dropped key press 1, to enter the door behind the dead skeleton press 2.");
                         String choice3 = in.next();
                         if (choice3 == "1" && items.contains(basicKey)){
                             System.out.println("You unlock the dorry with the key, you enter the room.");
@@ -297,6 +297,13 @@ public class TestClass {
             }
             if (currentRoom == fourthRoom){
                 System.out.println(fourthRoom.getRoomDescription());
+                System.out.println("To open large chest press 1, To return press 2.");
+                String choice = in.next();
+                if (choice == "1") {
+                    System.out.println("You open chest.");
+                } else if (choice == "2") {
+                    currentRoom = secondRoom;
+                }
             }
         }
     }
